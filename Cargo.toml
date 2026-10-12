@@ -3,4 +3,7 @@ name = "data-structure-and-algorithm-rs"
 version = "0.1.0"
 edition = "2024"
 
+[workspace]
+members = ["selection_sort"]
+
 [dependencies]
