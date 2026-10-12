@@ -23,6 +23,8 @@ impl<T: Ord> Sorting for [T] {
 
 #[cfg(test)]
 mod tests {
+    //! 本模块下所有单元测试代码由 AI 生成
+
     use super::*;
 
     /// 测试：无序数组应被排序为增序
