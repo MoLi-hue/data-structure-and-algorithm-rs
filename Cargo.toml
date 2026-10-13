@@ -4,6 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [workspace]
-members = ["bubble_sort","selection_sort"]
+members = ["bubble_sort", "insertion_sort","selection_sort"]
 
 [dependencies]
