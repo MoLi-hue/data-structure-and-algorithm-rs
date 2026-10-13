@@ -2,5 +2,6 @@
 name = "insertion_sort"
 version = "0.1.0"
 edition = "2024"
+description = "插入排序实现"
 
 [dependencies]
