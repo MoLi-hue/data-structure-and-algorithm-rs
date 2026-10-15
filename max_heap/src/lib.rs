@@ -75,7 +75,9 @@ impl<T: Ord> MaxHeap<T> {
 
             let v = self.0.pop();
 
-            self.shift_down(0);
+            if len != 1 {
+                self.shift_down(0);
+            }
 
             v
         }
@@ -118,6 +120,8 @@ impl<T: Ord> MaxHeap<T> {
         }
     }
 
+    /// # Panics
+    /// 索引 `i` 越界可能 panic
     fn shift_down(&mut self, mut index: usize) {
         while let Some(max_child) = self.max_index_of_self_and_child(index) {
             self.0.swap(index, max_child);
@@ -126,6 +130,8 @@ impl<T: Ord> MaxHeap<T> {
         }
     }
 
+    /// # Panics
+    /// 索引 `i` 越界可能 panic
     fn shift_up(&mut self, mut index: usize) {
         while let Some(p) = self.parent_index(index)
             && self.0[index] > self.0[p]
