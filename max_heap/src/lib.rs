@@ -161,3 +161,23 @@ impl<T: Ord> FromIterator<T> for MaxHeap<T> {
         Self::from(iter.into_iter().collect::<Vec<_>>())
     }
 }
+
+pub struct IntoIter<T: Ord>(MaxHeap<T>);
+
+impl<T: Ord> Iterator for IntoIter<T> {
+    type Item = T;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        self.0.pop()
+    }
+}
+
+impl<T: Ord> IntoIterator for MaxHeap<T> {
+    type Item = T;
+
+    type IntoIter = IntoIter<T>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        IntoIter(self)
+    }
+}
